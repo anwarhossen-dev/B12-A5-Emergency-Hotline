@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="./assets/logo.png">
+    <title>Emergency Service Directory</title>
+    <!-- tailwindcss and daisyUI -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+</head>
+<body>
+    <!-- header section start -->
+    <header>
+        <div class=" flex justify-between items-center p-4 bg-[#ffffff] ">
+            <div class="flex items-center space-x-4">
+                <img src="./assets/logo.png" alt="Logo" class="h-12">
+                <h1 class="text-2xl font-bold text-[#006747]">Emergency <br> Service</h1>
+            </div>
+            <div class="nav-parent flex items-center space-x-4">
+                <div class="flex flex-row items-center">
+                    <div class= "bg-[#41ff6b1a] rounded-full flex flex-row items-center p-5 mx-5">
+                        <h6 id="heart-count" class="text-[#000000] font-bold mx-2">0</h6>
+                         <img src="./assets/heart.png" class="w-[30px]" alt="">
+                    </div>
+                    <div class=" bg-[#41ff6b1a] rounded-full p-5 flex flex-row items-center mx-5">
+                        <h6 id="coin-count" class="text-[#000000] font-bold mx-2">100</h6>
+                        <img src="./assets/coin.png" class="w-[24px]" alt="">
+                    </div>
+                    <div class=" bg-[#00a63e] rounded-full p-5 flex flex-row items-center mx-5">
+                        <h6 id="copy-count" class="text-white font-bold mx-2">0</h6>
+                       <span class="text-white">Copy</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+</body>
+</html>
