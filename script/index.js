@@ -61,7 +61,7 @@ document.getElementById("card-box").addEventListener("click", function (e) {
         navigator.clipboard.writeText(serviceNumber).then(() => {
             copyCount++;
             document.getElementById("copy-count").innerText = copyCount;
-            alert(`Copied: ${serviceNumber}`);
+            //alert(`Copied: ${serviceNumber}`);
         });
     }
 });
