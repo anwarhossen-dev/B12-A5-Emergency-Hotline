@@ -1,17 +1,17 @@
+
 let heartCount = 0;
 let copyCount = 0;
 let coinCount = 100;
 
-// parent container listener
-document.getElementById("card-box").addEventListener("click", function (e) {
-
-    //  heart icon click
+function handleAction(e) {
+    // Heart icon click
     if (e.target.closest(".heart-icon")) {
         heartCount++;
         document.querySelector(".heart-count").innerText = heartCount;
+        return { action: "heart", heartCount };
     }
 
-    //  call button click
+    // Call button click
     if (e.target.closest(".callButton")) {
         if (coinCount >= 20) {
             coinCount -= 20;
@@ -34,7 +34,6 @@ document.getElementById("card-box").addEventListener("click", function (e) {
             let now = new Date();
             let timeString = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true });
 
-            // set innerHTML
             historyItem.innerHTML = `
                 <div>
                     <h1>${serviceName}</h1>
@@ -44,16 +43,16 @@ document.getElementById("card-box").addEventListener("click", function (e) {
                     <span>${timeString}</span>
                 </div>
             `;
-
-            // append to container
             historyContainer.appendChild(historyItem);
 
+            return { action: "call", serviceName, serviceNumber, coinCount };
         } else {
             alert("Not enough coins!");
+            return { action: "call-failed", reason: "not-enough-coins" };
         }
     }
 
-    //  copy button click
+    // Copy button click
     if (e.target.closest(".copyButton")) {
         let card = e.target.closest(".card-body");
         let serviceNumber = card.querySelector(".serviceNumber").innerText;
@@ -61,12 +60,18 @@ document.getElementById("card-box").addEventListener("click", function (e) {
         navigator.clipboard.writeText(serviceNumber).then(() => {
             copyCount++;
             document.getElementById("copy-count").innerText = copyCount;
-            //alert(`Copied: ${serviceNumber}`);
+            alert(`Copied: ${serviceNumber}`);
         });
+
+        return { action: "copy", copyCount, serviceNumber };
     }
-});
+}
+
+document.getElementById("card-box").addEventListener("click", handleAction);
 
 // clear history
 document.getElementById("clear-btn").addEventListener("click", function() {
     document.getElementById("history-container").innerHTML = "";
+    return { action: "clear-history" };
 });
+
