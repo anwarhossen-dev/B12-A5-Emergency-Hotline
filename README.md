@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 ## B12-A5-Emergency-Hotline
 
 ## Emergency Service Directory
@@ -8,8 +7,11 @@
 <li>Development environment a daisyUI </li>
 </ul>
 
+## Functionalities
+
+<h1>Heart Icons</h1>
+<ul>
+<li>Clicking on the 💗 heart icon of any card will increase the count in the Navbar  </li>
+</ul>
+
 ## project live link : https://anwarhossen-dev.github.io/B12-A5-Emergency-Hotline
-=======
-# B12-A5-Emergency-Hotline
-# project live link : https://anwarhossen-dev.github.io/B12-A5-Emergency-Hotline/
->>>>>>> 45e6d2da557d896ce89c048dd2f45255f81949f6
